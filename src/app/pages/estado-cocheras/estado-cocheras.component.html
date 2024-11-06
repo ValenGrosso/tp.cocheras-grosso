@@ -1,0 +1,35 @@
+<main>
+
+    <div class="tabla">
+        <div class="header-tabla">
+            <div>Número</div>
+            <div>Patente</div>
+            <div>Ingreso</div>
+            <div>Acciones</div>
+        </div>
+        
+        <div *ngFor="let cochera of cocheras; index as i" class="fila">
+            <div>{{ i + 1 }}</div>
+            <div *ngIf="cochera.patente; else disponibleText">
+                <span (click)="cerrarModalEstacionamiento(cochera.patente)" class="patente-cliquable">{{ cochera.patente }}</span>
+            </div>
+            <ng-template #disponibleText>
+                <div>
+                    <button (click)="abrirModalNuevoEstacionamiento(cochera.id)" class="disponible" [ngClass]="{ disponible: !cochera.deshabilitada && !cochera.patente, ocupado: cochera.deshabilitada }">
+                        Disponible
+                    </button>
+                </div>
+            </ng-template>
+            <div>{{ cochera.horaIngreso || '-' }}</div>
+            <div class="acciones-container">
+                <button (click)="habilitarCochera(cochera.id)" class="boton-habilitar">Habilitar</button>
+                <button (click)="deshabilitarCochera(cochera.id)" class="boton-deshabilitar">Deshabilitar</button>
+                <button (click)="eliminarCochera(cochera.id)" class="boton-eliminar">Eliminar</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="agregar-fila">
+        <button (click)="agregarNuevaFila()" class="boton-agregar">Agregar cochera</button>
+    </div>
+</main>

@@ -1,0 +1,13 @@
+<header class="encabezado">
+    <h1 class="titulo-app">PARKING APP</h1>
+    <div class="administracion-cuenta">
+      <a href="#" (click)="abrirModal()" class="enlace-cuenta">Mi Cuenta</a>
+      <a class="enlace-cerrar-sesion" [routerLink]="['/login']">Cerrar sesión</a>
+      <a class="enlace-estado-cocheras" [routerLink]="['/estado-cocheras']">Estado de Cocheras</a>
+      <ng-container *ng If="esAdmin">
+        <p class="enlace-reportes" [routerLink]="['/reportes']">Reportes</p>
+        <a class="enlace-precios" [routerLink]="['/precios']">Precios</a>
+      </ng-container>
+    </div>
+  </header>
+  

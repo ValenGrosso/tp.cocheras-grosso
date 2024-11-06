@@ -1,0 +1,20 @@
+<main>
+
+    <div class="contenedor-reporte">
+        <h2>Informe Mensual de Estacionamientos</h2>
+        <div class="tabla">
+            <div class="header-tabla">
+                <div>N°</div>
+                <div>Mes</div>
+                <div>Usos</div>
+                <div>Cobrado</div>
+            </div>
+            <div *ngFor="let reporte of reportes; index as i">
+                <div>{{ i + 1 }}</div>
+                <div>{{ reporte.mes }}</div>
+                <div>{{ reporte.usos }}</div>
+                <div>{{ reporte.cobrado | currency: 'ARS' }}</div>
+            </div>
+        </div>
+    </div>
+</main>

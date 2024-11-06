@@ -1,0 +1,15 @@
+<main>
+    <div class="contenedor-login">
+        <h1 class="titulo-login">PARKING APP</h1>
+        <p class="texto-registro">¿Eres nuevo en Parking App?<a class="link-registro" href="#">¡Registrate aquí!</a></p>
+
+        <form>
+            <div class="campos-sesion">
+                <input class="campo-usuario" type="text" [(ngModel)]="datosLogin.username" name="usuario" placeholder="Usuario...">
+                <input class="campo-contraseña" type="password" [(ngModel)]="datosLogin.password" name="password" placeholder="Contraseña...">
+            </div>
+            <p><a class="link-recuperacion" href="">Olvidé mi Contraseña</a></p>
+            <button type="button" class="boton-iniciar-sesion" (click)="iniciarSesion()">Iniciar sesión</button>
+        </form>
+    </div>
+</main>

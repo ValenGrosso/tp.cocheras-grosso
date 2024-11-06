@@ -1,0 +1,123 @@
+.tabla-base {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.acciones-container {
+    display: flex;
+    gap: 10px;
+}
+
+.disponible {
+    background-color: #2ecc71; 
+    color: #ffffff; 
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.ocupado {
+    background-color: #e74c3c; 
+    color: #ffffff; 
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: linear-gradient(
+        rgba(0, 0, 0, 0.4),
+        rgba(0, 0, 0, 0.4)
+    ), url('https://blog.corporacionbi.com/hubfs/2022/Blogs/Cr%C3%A9dito%20de%20autos/2.%20Seguridad%20al%20volante%20Tips%20para%20estacionar%20un%20carro.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.tabla {
+    @extend .tabla-base;
+    width: 80%;
+    margin-top: 20px;
+    background-color: #ecf0f1; 
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    
+    .header-tabla {
+        font-size: 1.2rem;
+        color: #ffffff; 
+    }
+    
+    .acciones-container {
+        @extend .acciones-container;
+    }
+    
+    .disponible {
+        @extend .disponible;
+    }
+    
+    .ocupado {
+        @extend .ocupado;
+    }
+}
+
+.patente-cliquable {
+    cursor: pointer;
+    color: #3498db; 
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.boton-habilitar, .boton-deshabilitar, .boton-eliminar {
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    img {
+        width: 16px;
+        height: 16px;
+        margin-right: 5px;
+    }
+}
+
+.boton-habilitar {
+    background-color: #2ecc71; 
+    color: #ffffff; 
+}
+
+.boton-deshabilitar, .boton-eliminar {
+    background-color: #e74c3c; 
+    color: #ffffff; 
+}
+
+.agregar-fila {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.boton-agregar {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #ffffff; 
+    background-color: #3498db; 
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background-color: #2980b9; 
+    }
+}
